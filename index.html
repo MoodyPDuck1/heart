@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equic="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        background: #0b1522;
+    }
+    .heart{
+        height: 150px;
+        width: 150px;
+        background-color: red;
+        position: relative;
+        transform: rotate(45deg);
+        box-shadow: -20px 20px 150px;
+        animation: palpitar 0.5s linear infinite alternate;
+    }
+    
+    @keyframes palpitar{
+        0%{transform: rotate(45deg) scale(1.10);}
+        80%{transform: rotate(45deg) scale(1.0);}
+        100%{transform: rotate(45deg) scale(0.8);}
+    }
+    
+
+    .heart::before{
+        content: "";
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background: red;
+        right: 50%;
+        border-radius: 50%;
+        box-shadow: 20px 20px 150px #f20044;
+    }
+
+    .heart::after{
+        content: "";
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        background: red;
+        top: -50%;
+        border-radius: 50%;
+        box-shadow: 20px 20px 150px #f20044;
+    }
+    .content{
+        position: fixed;
+        margin-bottom: 50px;
+        text-align: center;
+
+    }
+
+    .band-img {
+            width: 250px; /* Adjust the size of the GIF as needed */
+            height: auto; /* Maintain aspect ratio */
+            position: absolute;
+            top: 150px; /* Adjust position to fit inside the heart */
+            left: -120px; /* Center the GIF */
+    }
+
+    .text-above {
+            position: absolute;
+            top: -250px; /* Adjust the position to place the text above the heart */
+            width: 200%;
+            color: rgb(52, 35, 209);
+            font-size: 1.5em; /* Adjust font size as needed */
+    }
+
+    .scrolling-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-text 10s linear infinite;
+        }
+
+    @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+    }
+
+    h1, h2 {
+            color: rgb(240, 16, 16);
+            margin: 0;
+        }
+    h1{color : rgb(231, 16, 8)};
+    h2{color : white};
+</style>
+
+<body>
+    <div class="heart"></div>
+    <div class="content">
+        <div class="text-above">
+            <div class="scrolling-text">
+                <h1>My heart is yours ꨄ</h1>
+            </div>
+        </div>
+        <img class="band-img" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3FoMXZya3FqdG9sbHh4djRsa294c2FiN2Qyd2hicnRqb2s4dWg3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3odxXG6oUNRVhsdcLK/giphy.webp">
+    </div>
+</body>
+</html>
